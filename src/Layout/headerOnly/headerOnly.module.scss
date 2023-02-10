@@ -1,0 +1,13 @@
+.wrapper {
+    width: var(--default-layout-width);
+    margin: 0 auto;
+}
+
+.container {
+    margin-top: 60px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+}

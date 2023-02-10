@@ -1,0 +1,115 @@
+.wrapper {
+    font-weight: 500;
+    font-size: 1.4rem;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background: transparent;
+    font-family: 'Lato', sans-serif;
+
+    //làm cho nút ko click được nữa
+    &.disabled {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+}
+
+.icon + .title,
+.title + .icon {
+    margin-left: 5px;
+}
+
+//Kiểu nút
+.primary {
+    // float: left;
+    font-size: 14px;
+    padding-top: 2px;
+    color: #888888;
+    border-color: #888888;
+    font-weight: 600;
+    border: 2px solid;
+
+    &:hover {
+        background-color: black;
+        color: green;
+    }
+}
+
+.outline {
+    border-color: var(--primary);
+    color: var(--primary);
+
+    &:hover {
+        background-color: rgba(254, 44, 85, 0.06);
+    }
+}
+
+.text {
+    border-color: var(--black);
+    background-color: #161616bf;
+    color: white;
+    font-weight: 700;
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
+
+.lock {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 51px;
+    color: white;
+    margin-right: 28px;
+    font-weight: 700;
+}
+
+.rounded {
+    color: #fff;
+    background-color: #161616;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #81b441;
+    }
+}
+
+.primarytwo {
+    color: #727272;
+    margin: 0;
+    line-height: 20px;
+    transition: 0.22s;
+    font-size: 1.1rem;
+
+    &:hover {
+        color: #c69f73;
+    }
+}
+
+//size nút
+.small {
+    padding: 6px 10px;
+    min-width: 60px;
+}
+
+.big {
+    padding: 6px 10px;
+    min-width: 90px;
+}
+
+.little {
+    padding: 9px 20px 11px;
+    min-width: 90px;
+}
+
+.less {
+    padding: 2px;
+    min-width: 30px;
+    margin-right: 8px;
+
+    &:hover {
+        background-color: #ff0000c9 !important;
+    }
+}

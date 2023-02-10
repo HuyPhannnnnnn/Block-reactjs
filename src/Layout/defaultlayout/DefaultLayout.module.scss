@@ -1,0 +1,19 @@
+.wrapper {
+    width: var(--default-layout-width);
+    margin: 0 auto;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    & .content {
+        width: calc(70% - 20px);
+    }
+
+    & .sidebar {
+        width: calc(30% - 20px);
+        height: 2330px;
+    }
+}

@@ -1,0 +1,24 @@
+.top-search {
+    padding-left: 16px;
+    border-left: 1px solid;
+    border-color: #e8e8e8;
+    z-index: 999;
+
+    input {
+        border: none;
+        font-style: italic;
+        background: transparent;
+        color: white;
+    }
+}
+
+.check {
+    background-color: transparent;
+    margin-right: 10px;
+    color: white;
+}
+
+.icon-search {
+    background-color: transparent;
+    color: white;
+}

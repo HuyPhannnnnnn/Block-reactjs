@@ -1,0 +1,52 @@
+@import 'normalize.css';
+
+:root {
+    --default-layout-width: 1080px;
+    --login-width: 45%;
+
+    --text-color: #161823;
+}
+
+body {
+    background: #fff;
+    color: #424242;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100% !important;
+    margin: 0 auto;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+button,
+input,
+[tabindex] {
+    border: none;
+    outline: none;
+}
+
+ul {
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+img {
+    width: 100% !important;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}

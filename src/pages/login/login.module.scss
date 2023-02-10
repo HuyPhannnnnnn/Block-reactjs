@@ -1,0 +1,30 @@
+.wrapper {
+    width: var(--login-width);
+}
+
+.label {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #00000096;
+}
+
+.input {
+    font-size: 1.4rem;
+
+    &:focus {
+        box-shadow: none;
+        border-color: #00000096;
+    }
+}
+
+
+
+.submit {
+    font-size: 1.5rem;
+    background-color: #00000096;
+    border: none;
+
+    &:hover {
+        background-color: black;
+    }
+}
