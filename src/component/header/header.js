@@ -73,12 +73,8 @@ const shop = [
 const icons = <FontAwesomeIcon icon={faChevronDown} />;
 
 function Header() {
-    // const [searchValue, SetSearchValue] = useState('');
     const [show, setShow] = useState(false);
 
-    // const handleInput = (e) => {
-    //     SetSearchValue(e.target.value);
-    // };
 
     const hanleShow = () => {
         setShow(!show);
@@ -209,24 +205,7 @@ function Header() {
                             </a>
                         </li>
                     </ul>
-                    <Search />
-                    {/* <div className={cx('top-search')}>
-                        <input
-                            value={searchValue}
-                            type="text"
-                            placeholder="Search and hit Enter...."
-                            onChange={handleInput}
-                            spellCheck={false}
-                        />
-                        {searchValue && (
-                            <button className={cx('check')}>
-                                <FontAwesomeIcon icon={faCircleXmark} />
-                            </button>
-                        )}
-                        <button className={cx('icon-search')}>
-                            <FontAwesomeIcon icon={faSearch} />
-                        </button>
-                    </div> */}
+                    <Search />    
                 </div>
             </div>
         </header>

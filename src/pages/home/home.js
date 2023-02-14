@@ -36,7 +36,7 @@ function Homes() {
                             <div className={cx('content-white')}>
                                 <p>{cur.content}</p>
                                 <div>
-                                    <Buttonbtn to={`/@/${cur.name}`} rounded little>
+                                    <Buttonbtn to={cur.to} rounded little>
                                         Continue reading
                                     </Buttonbtn>
                                 </div>

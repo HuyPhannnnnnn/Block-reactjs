@@ -1,0 +1,108 @@
+.wrapper {
+    & div:first-child {
+        margin-bottom: 10px;
+
+        & div:first-child img {
+            height: 493px;
+        }
+    }
+
+    & div:nth-child(2) {
+        text-align: center;
+        margin-bottom: 20px;
+
+        & h4 {
+            font-size: 12px;
+            font-weight: 600;
+            color: #81b441;
+            margin: 7px 0;
+            letter-spacing: 2px;
+        }
+
+        & h1 {
+            padding: 10px 30px;
+            font-size: 36px;
+            color: #161616;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        & .date-content {
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+
+            & span {
+                font-weight: 700;
+                color: #888888;
+            }
+        }
+    }
+
+    & div:nth-child(3) {
+        font-size: 14px;
+        text-align: justify;
+        letter-spacing: 0.01em;
+
+        & p {
+            color: #000000;
+            margin-bottom: 16px;
+            line-height: 26px;
+        }
+
+        & blockquote {
+            border-left: 3px solid;
+            border-color: #ccc;
+            padding: 0 18px;
+            margin-left: 30px;
+
+            & p {
+                font-size: 18px;
+                line-height: 28px;
+                font-style: italic;
+                color: #888 !important;
+            }
+        }
+    }
+
+    & div:nth-child(4) {
+        & h3 {
+            color: #000;
+            font-weight: 600;
+            margin-bottom: 14px;
+            font-size: 21px;
+        }
+
+        & p {
+            color: #000;
+            margin-bottom: 16px;
+            line-height: 26px;
+        }
+    }
+
+    & div:nth-child(5) {
+        & a {
+            display: inline-block;
+            border: 1px solid #888;
+            line-height: 25px;
+            font-size: 11px;
+            color: #888;
+            padding: 0 10px;
+            margin-left: 5px;
+            margin-bottom: 8px;
+        }
+
+        & a:hover {
+            color: green;
+            background-color: black;
+        }
+    }
+}
+
+.slideOne {
+    position: relative;
+    bottom: 30px;
+}
+
+

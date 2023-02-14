@@ -23,8 +23,6 @@ function Login() {
                 body: JSON.stringify({ user: { email, password } }),
                 mode: 'no-cors',
             });
-            console.log(JSON.stringify({ user: { email, password } }));
-            
             const result = await response.json();
             if (result.error) {
                 setError(result.error);

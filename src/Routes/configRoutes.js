@@ -1,9 +1,9 @@
 const configRoutes = {
     home: '/',
-    myMusic: '/@/:name',
+    myMusic: '/myMusic',
     zingchart: '/zingchart',
-    login:'/login'
-    
+    login:'/login',
+    etiam:'/Etiam'
 };
 
 export default configRoutes;

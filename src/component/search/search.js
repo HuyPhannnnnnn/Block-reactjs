@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faSearch } from '@fortawesome/free-solid-svg-icons';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import classNames from 'classnames/bind';
 import styles from './search.module.scss';
@@ -10,23 +10,10 @@ const cx = classNames.bind(styles);
 
 function Search() {
     const [searchValue, SetSearchValue] = useState('');
-    const [results, setResults] = useState([]);
 
     const handleInput = (e) => {
         SetSearchValue(e.target.value);
     };
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const response = await fetch(`http://localhost:3000/${searchValue}`);
-            const data = await response.json();
-            setResults(data.results);
-        };
-
-        if (searchValue) {
-            fetchData();
-        }
-    }, [searchValue]);
 
     return (
         <div className={cx('wrapper')}>
@@ -47,11 +34,6 @@ function Search() {
                     <FontAwesomeIcon icon={faSearch} />
                 </button>
             </div>
-            <ul>
-                {results.map((product) => (
-                    <li key={product.id}>{product.title}</li>
-                ))}
-            </ul>
         </div>
     );
 }
