@@ -14,6 +14,19 @@
     z-index: 999;
 }
 
+.plus {
+    position: absolute;
+    left: -4px;
+    top: 15px;
+    font-size: 30px;
+    color: white;
+
+    &:hover {
+        color: green;
+    }
+
+}
+
 .inner {
     display: flex;
     width: var(--default-layout-width);
@@ -52,6 +65,10 @@
         color: white;
         font-size: 13px;
         margin-right: 10px;
+
+        &:hover {
+            color: green;
+        }
     }
 
     &::after {
@@ -90,7 +107,7 @@
 }
 
 .aboutme {
-    transform: translateX(calc(-163%));
+    transform: translateX(calc(0%));
     animation: slideinright ease 1s, fadeout linear 1s 3s forwards;
     position: fixed;
     width: 350px;
@@ -99,6 +116,9 @@
     padding-left: 20px;
     padding-right: 20px;
     z-index: 999;
+    height: 100%;
+    top: 51px;
+    color: black !important;
 
     @keyframes slideinright {
         from {
@@ -107,8 +127,7 @@
         }
         to {
             // opacity: 1;
-            transform: translateX(calc(-163%));
+            transform: translateX(calc(0%));
         }
     }
-
 }

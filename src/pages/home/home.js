@@ -1,6 +1,7 @@
 import Image from '../../component/Image/Image';
 import SlideOne from '../../component/SlideOne/SlideOne';
 import Buttonbtn from '../../component/Button/Button';
+import axios from 'axios';
 
 import styles from './home.module.scss';
 import classNames from 'classnames/bind';
@@ -10,14 +11,19 @@ const cx = classNames.bind(styles);
 
 function Homes() {
     const [posts, Setposts] = useState([]);
-
-    useEffect(() => {
-        fetch('http://localhost:3000/slide')
-            .then((res) => res.json())
-            .then((posts) => {
-                Setposts(posts);
-            });
-    }, []); //call api đổ dữ liệu
+    
+    async function fetchData() {
+        try {
+          const response = await axios.get('http://localhost:3000/slide');
+          Setposts(response.data);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    
+      useEffect(() => {
+        fetchData();
+      }, [])
     return (
         <div>
             {posts.map((cur) => {

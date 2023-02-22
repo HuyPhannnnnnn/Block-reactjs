@@ -1,62 +1,42 @@
 import classNames from 'classnames/bind';
 import styles from './header.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown} from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import Buttonbtn from '../Button/Button';
-import Menu from '../Menu/Menu';
 import Info from '../info/info';
 import Search from '../search/search';
 
-import { Link } from 'react-router-dom';
+import {  Link } from 'react-router-dom';
 import configRoutes from '../../Routes/configRoutes';
 
 import Tippy from '@tippyjs/react/headless';
 import { Wrraper as PopperWrapper } from '../Popper/index';
-import { Singpper as PopperSingpper } from '../Popper/index';
 import 'tippy.js/dist/tippy.css';
 import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
-//menu
-const menu = [
-    {
-        title: 'STANDARD BLOG LAYOUT',
-        to: '/STANDARDBLOGlAYOUT',
-    },
-    {
-        title: 'lIST LAYOUT',
-    },
-    {
-        title: '1ST FULL POST THEN lIST',
-    },
-    {
-        title: 'GRID lAYOUT',
-    },
-    {
-        title: '1ST FULL POST THEN GRID',
-    },
-];
-
 //currentmenu
 const currentmenu = [
     {
-        title: 'GUTENBERG POST',
+        title: 'Etiam id feugiat dui, at dictum nisi',
+        to: '/Etiam',
     },
     {
-        title: 'STANDARD POST',
+        title: 'Aenean at laoreet metus',
+        to: '/Aenean',
     },
     {
-        title: 'FULL WIDTH POST',
+        title: 'Curabitur ipsum risus',
+        to: '/Curabitur',
     },
     {
-        title: 'INDEX SHORTCODE',
+        title: 'Sed nec rhoncus ante',
+        to: '/Sed',
     },
     {
-        title: 'TYPOGRAPHY',
-    },
-    {
-        title: 'FULL WIDTH PAGE',
+        title: 'Phasellus ac tempor libero',
+        to: '/Phasellus',
     },
 ];
 
@@ -64,9 +44,11 @@ const currentmenu = [
 const shop = [
     {
         title: 'CART',
+        to: '/cart',
     },
     {
         title: 'CHECK OUT',
+        to: '/checkout',
     },
 ];
 
@@ -75,23 +57,22 @@ const icons = <FontAwesomeIcon icon={faChevronDown} />;
 function Header() {
     const [show, setShow] = useState(false);
 
-
     const hanleShow = () => {
         setShow(!show);
     };
 
     return (
         <header className={cx('wrapper')}>
+            <div className={cx('plus')} onClick={hanleShow}>
+                <i class="fa-solid fa-square-plus"></i>
+                {show && <Info className={cx('aboutme')} />}
+            </div>
             <div className={cx('inner')}>
                 <ul className={cx('left-menu')}>
                     <Link to={configRoutes.home}>
-                        <Menu items={menu}>
-                            <li>
-                                <Buttonbtn lock rightIcon={icons}>
-                                    HOME
-                                </Buttonbtn>
-                            </li>
-                        </Menu>
+                        <li>
+                            <Buttonbtn lock>HOME</Buttonbtn>
+                        </li>
                     </Link>
                     <Tippy
                         placement="bottom-end"
@@ -104,7 +85,7 @@ function Header() {
                                         {currentmenu.map((item, index) => {
                                             return (
                                                 <li className={cx('homeless')} key={index}>
-                                                    <Buttonbtn primarytwo big>
+                                                    <Buttonbtn to={item.to} primarytwo big>
                                                         {item.title}
                                                     </Buttonbtn>
                                                 </li>
@@ -133,19 +114,19 @@ function Header() {
                         interactive="true"
                         render={(attrs) => (
                             <div className={cx('menu-lists')} tabIndex="-1" {...attrs}>
-                                <PopperSingpper>
+                                <PopperWrapper>
                                     <ul>
                                         {shop.map((item, index) => {
                                             return (
                                                 <li className={cx('homeless')} key={index}>
-                                                    <Buttonbtn primarytwo small>
+                                                    <Buttonbtn to={item.to} primarytwo big>
                                                         {item.title}
                                                     </Buttonbtn>
                                                 </li>
                                             );
                                         })}
                                     </ul>
-                                </PopperSingpper>
+                                </PopperWrapper>
                             </div>
                         )}
                     >
@@ -155,12 +136,12 @@ function Header() {
                             </Buttonbtn>
                         </li>
                     </Tippy>
-                    <li>
-                        <Buttonbtn lock onClick={hanleShow}>
-                            ABOUT ME +
-                        </Buttonbtn>
-                        {show && <Info className={cx('aboutme')} />}
-                    </li>
+                    <Link to={configRoutes.aboutme}>
+                        <li>
+                            <Buttonbtn lock>ABOUT ME +</Buttonbtn>
+                            {/* {show && <Info className={cx('aboutme')} />} */}
+                        </li>
+                    </Link>
                     <Link to={configRoutes.login}>
                         <li>
                             <Buttonbtn lock>Login</Buttonbtn>
@@ -205,7 +186,7 @@ function Header() {
                             </a>
                         </li>
                     </ul>
-                    <Search />    
+                    <Search />
                 </div>
             </div>
         </header>

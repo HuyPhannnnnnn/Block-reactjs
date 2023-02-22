@@ -63,6 +63,10 @@
     color: white;
     margin-right: 28px;
     font-weight: 700;
+
+    &:hover {
+        color: green;
+    }
 }
 
 .rounded {
@@ -81,7 +85,7 @@
     margin: 0;
     line-height: 20px;
     transition: 0.22s;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
 
     &:hover {
         color: #c69f73;

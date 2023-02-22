@@ -85,7 +85,7 @@ function Comment() {
                             onChange={handleChange}
                         />
                     </Form.Group>
-                    <Button type="submit">Submit</Button>
+                    <Button type="submit">POST COMMENT</Button>
                 </Form>
             </div>
         </div>

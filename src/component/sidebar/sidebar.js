@@ -1,6 +1,8 @@
 import Image from '../Image/Image';
 import Buttonbtn from '../Button/Button';
 import Info from '../info/info';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import classNames from 'classnames/bind';
 import styles from './sidebar.module.scss';
@@ -12,12 +14,18 @@ const cx = classNames.bind(styles);
 function Sidebar() {
     const [forests, setForests] = useState([]);
     const [showgototop, setShowgototop] = useState(false);
+
+    async function fetchData() {
+        try {
+            const response = await axios.get('http://localhost:3000/slide');
+            setForests(response.data);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
     useEffect(() => {
-        fetch('http://localhost:3000/slide')
-            .then((res) => res.json())
-            .then((data) => {
-                setForests(data);
-            });
+        fetchData();
     }, []);
 
     useEffect(() => {
@@ -85,7 +93,9 @@ function Sidebar() {
                                     <Image src={forest.image} alt="ava"></Image>
                                 </div>
                                 <div>
-                                    <h4>{forest.title}</h4>
+                                    <Link to={forest.to}>
+                                        <h4>{forest.title}</h4>
+                                    </Link>
                                     <span>{forest.date}</span>
                                 </div>
                             </li>
